@@ -1,0 +1,19 @@
+<section class="product-list-section">
+    <div class="list-header">
+        <h1 class="list-title">Kaspi.kz — Каталог товаров</h1>
+        <p class="list-subtitle">{{ filteredProducts.length }} товаров</p>
+    </div>
+
+    <div style="margin: 15px 0;">
+        <button (click)="showTopRated()">Rating > 4.9</button>
+        <button (click)="showAll()">Show All</button>
+    </div>
+
+    <div class="product-grid">
+        <app-product-card
+                *ngFor="let product of filteredProducts; trackBy: trackById"
+                [product]="product"
+        ></app-product-card>
+    </div>
+</section>
+
